@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 15:50:23 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/03 16:09:11 by hbenfadd         ###   ########.fr       */
+/*   Created: 2023/06/02 15:39:12 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/06/03 14:33:29 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 # include <iostream>
-# include <string>
-# include "Contact.hpp"
 
-class PhoneBook
-{
-public:
-	PhoneBook(void);
-	~PhoneBook(void);
-	void	add_contact(void);
-	void	search_contact(void);
-	void	putData(){
-		for(int i = 0; i < 8; i++)
-		{
-			std::cout << "--------------"<<std::endl;
-
-			contacts[i].getData();
-		}
-	}
+class Contact {
 private:
-	static int index;
-	Contact	contacts[8];
+    std::string	first_name;
+	std::string	last_name;
+	std::string	nickname;
+	std::string	phone_number;
+	std::string	darkset_secret;
+public:
+	Contact();
+	~Contact();
+	void setFirstNmae(std::string __first_name, std::string __last_name, std::string __phone_number, std::string __darkest_secret="Unkwon");
+	void getData(void);
 };
 
 #endif
-
