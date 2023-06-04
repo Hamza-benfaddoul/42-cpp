@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:50:23 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/03 16:09:11 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/04 15:15:44 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 # include <iostream>
 # include <string>
 # include "Contact.hpp"
-
+# define GREEN "\033[32m"
+# define YELLOW "\033[33m"
+# define RED "\033[31m"
+# define RESET "\033[0m"
 class PhoneBook
 {
 public:
@@ -23,18 +26,12 @@ public:
 	~PhoneBook(void);
 	void	add_contact(void);
 	void	search_contact(void);
-	void	putData(){
-		for(int i = 0; i < 8; i++)
-		{
-			std::cout << "--------------"<<std::endl;
-
-			contacts[i].getData();
-		}
-	}
 private:
 	static int index;
 	Contact	contacts[8];
+	void dispyaly_contact(int _index);
 };
+
 
 #endif
 
