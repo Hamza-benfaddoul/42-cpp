@@ -42,7 +42,13 @@ void    Contact::setContact(std::string first_name, std::string last_name, std::
 
 void Contact::display_contact()
 {
-    std:: cout << (first_name.length() > 10 ? first_name.substr(0, 9) + "." : first_name.length() < 10 ? first_name + std::string(10 - first_name.length(), ' ') : first_name) << " | ";; 
-    std::cout << (last_name.length() > 10 ? last_name.substr(0, 9) + "." : last_name.length() < 10 ? last_name + std::string(10 - last_name.length(), ' ') : last_name) << " | ";
-    std::cout << (nickname.length() > 10 ? nickname.substr(0, 9) + "." : nickname.length() < 10 ? nickname + std::string(10 - nickname.length(), ' ') : nickname) << std::endl;
+    std:: cout << (first_name.length() > 10 ?
+        first_name.substr(0, 9) + "." : first_name.length() < 10 ?
+        first_name + std::string(10 - first_name.length(), ' ') : first_name) << " | ";; 
+    std::cout << (last_name.length() > 10 ?
+        last_name.substr(0, 9) + "." : last_name.length() < 10 ?
+        last_name + std::string(10 - last_name.length(), ' ') : last_name) << " | ";
+    std::cout << (nickname.length() > 10 ?
+        nickname.substr(0, 9) + "." : nickname.length() < 10 ?
+        nickname + std::string(10 - nickname.length(), ' ') : nickname) << std::endl;
 }

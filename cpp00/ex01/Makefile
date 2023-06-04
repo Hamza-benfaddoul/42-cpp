@@ -2,7 +2,7 @@ NAME	= PhoneBook
 
 CXX 		= c++ 
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
-RM		= rm 
+RM		= rm -f
 
 
 all: $(NAME)
@@ -14,7 +14,7 @@ OBJS	=$(SRCS:.cpp=.o)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 clean:
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 re: fclean all
