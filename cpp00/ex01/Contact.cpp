@@ -28,6 +28,11 @@ void    Contact::getContact()
 
 void    Contact::setContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
+    if ( first_name.empty() || last_name.empty() || nickname.empty() || phone_number.empty() || darkest_secret.empty())
+    {
+        std::cout << "\033[31mError: empty field\033[0m\n" << std::endl;
+        return ;
+    }
     this->first_name = first_name;
     this->last_name = last_name;
     this->nickname = nickname;
