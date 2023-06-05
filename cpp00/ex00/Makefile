@@ -1,0 +1,32 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/06/05 12:35:48 by hbenfadd          #+#    #+#              #
+#    Updated: 2023/06/05 12:35:49 by hbenfadd         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	= megaphone
+
+CXX 		= c++ 
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+RM		= rm -f
+
+
+all: $(NAME)
+
+SRCS	= megaphone.cpp
+
+OBJS	=$(SRCS:.cpp=.o)
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+clean:
+	@$(RM) $(OBJS)
+fclean: clean
+	@$(RM) $(NAME)
+re: fclean all
