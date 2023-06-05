@@ -6,13 +6,14 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:39:12 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/04 15:06:37 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/05 11:52:06 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 # include <iostream>
+# include <iomanip>
 
 class Contact {
 private:

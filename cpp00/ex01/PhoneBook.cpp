@@ -1,6 +1,18 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/05 11:51:10 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/06/05 11:54:41 by hbenfadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./PhoneBook.hpp"
 # include "Contact.hpp"
+
 PhoneBook::PhoneBook(){}
 PhoneBook::~PhoneBook(){}
 
@@ -27,10 +39,13 @@ void    PhoneBook::search_contact(void)
     std::string	index;
 
 	std::cout << "search contact" << std::endl;
-	std::cout << "index| first name | last name  | nickname " << std::endl;
+	std::cout << std::setw(10) << "index" << "|";
+	std::cout << std::setw(10) << "first name" << "|";
+	std::cout << std::setw(10) << "last name" << "|";
+	std::cout << std::setw(10) << "nickname" << std::endl;
 	for (int i = 0; i < 8; i++)
 	{
-		std::cout << i << "    | ";
+		std::cout << std::setw(10) << i << "|";
 		this->contacts[i].display_contact();
 	}
     std::cout << "\033[33m Enter an index: \033[0m";
