@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:18:12 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/05 14:58:59 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/06 15:25:35 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Weapon
     public:
         Weapon(std::string type);
         ~Weapon();
-        std::string const &getType(void);
         void setType(std::string type);
+        std::string const &getType(void);
     private:
         std::string _type;
 };
