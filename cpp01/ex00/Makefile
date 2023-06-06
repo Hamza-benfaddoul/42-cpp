@@ -6,7 +6,7 @@
 #    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/04 18:25:38 by hbenfadd          #+#    #+#              #
-#    Updated: 2023/06/04 18:27:34 by hbenfadd         ###   ########.fr        #
+#    Updated: 2023/06/05 13:07:48 by hbenfadd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,3 +29,5 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+
+re: fclean all
