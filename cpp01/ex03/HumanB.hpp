@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:06:03 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/05 15:06:49 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/08 11:43:38 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanB
         HumanB(std::string name);
         ~HumanB();
         void attack(void);
-        void setWeapon(Weapon &weapon);
+        void setWeapon(Weapon& weapon);
     private:
         std::string _name;
         Weapon *_weapon;

@@ -6,11 +6,11 @@
 #    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 14:16:26 by hbenfadd          #+#    #+#              #
-#    Updated: 2023/06/06 16:20:35 by hbenfadd         ###   ########.fr        #
+#    Updated: 2023/06/08 11:46:40 by hbenfadd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence
+NAME = Zombie
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
