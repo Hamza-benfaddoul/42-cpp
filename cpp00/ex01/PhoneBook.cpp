@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 11:51:10 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/05 11:54:41 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/11 12:16:34 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void    PhoneBook::search_contact(void)
 	}
     std::cout << "\033[33m Enter an index: \033[0m";
     getline(std::cin, index);
-    if (index.length() == 1 && index[0] >= '0' && index[0] <= '7')
-        contacts[index[0] - '0'].getContact();
+	if (index.length() == 1 && index[0] >= '0' && index[0] <= '7')
+        contacts[std::stoi(index)].getContact();
     else
         std::cout << "Invalid index" << std::endl;
 }
