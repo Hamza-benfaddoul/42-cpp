@@ -19,6 +19,11 @@ Contact::~Contact(){}
 
 void    Contact::getContact()
 {
+    if (this->first_name.empty() && this->last_name.empty() && this->nickname.empty() && this->phone_number.empty() && this->darkest_secret.empty())
+    {
+        std::cout << "\033[31mError: empty contact\033[0m\n" << std::endl;
+        return ;
+    }
 	std::cout <<  "\033[32m ---- Contact ----\033[0m" << std::endl;
     std::cout << "first name: " << this->first_name << std::endl;
     std::cout << "last name: " << this->last_name << std::endl;
