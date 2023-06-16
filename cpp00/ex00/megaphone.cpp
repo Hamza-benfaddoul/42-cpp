@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 12:36:18 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/10 11:36:26 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/16 15:17:58 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ int	main(int ac, char **av)
 	}
 	while(++i < ac)
 	{
-		str = av[i];
 		j = -1;
-		while(str[++j])
-			std::cout << (char)toupper(str[j]);
+		while(av[++j])
+			std::cout << (char)toupper(av[j]);
 	}
 	std::cout<<std::endl;
 	return (EXIT_SUCCESS);
