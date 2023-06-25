@@ -30,7 +30,7 @@ void PhoneBook::add_contact(void){
 	std::getline(std::cin, contact_data[3]);
 	std::cout << "Enter darkest secret: ";
 	std::getline(std::cin, contact_data[4]);
-	if (contacts[index].setContact(contact_data[0], contact_data[1], contact_data[2], contact_data[3], contact_data[4]) == -1)
+	if (contacts[index].setContact(contact_data[0], contact_data[1], contact_data[2], contact_data[3], contact_data[4]))
 		return ;
 	this->index = ++this->index % 8;
 }
