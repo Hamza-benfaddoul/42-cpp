@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 11:51:10 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/11 12:16:34 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:57:15 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void PhoneBook::add_contact(void){
 	std::getline(std::cin, contact_data[3]);
 	std::cout << "Enter darkest secret: ";
 	std::getline(std::cin, contact_data[4]);
-	contacts[index].setContact(contact_data[0], contact_data[1], contact_data[2], contact_data[3], contact_data[4]);
+	if (contacts[index].setContact(contact_data[0], contact_data[1], contact_data[2], contact_data[3], contact_data[4]))
+		return ;
 	this->index = ++this->index % 8;
 }
 
