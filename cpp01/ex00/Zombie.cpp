@@ -21,7 +21,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie()
 {
-    std::cout << name << std::endl;
+    std::cout << "Zombie " << name << " is dead" << std::endl;
 }
 
 void    Zombie::announce()
