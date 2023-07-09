@@ -12,7 +12,6 @@
 
 #include "Harl.hpp"
 
-
 void Harl::debug(void)
 {
     std::cout << "[DEBUG]" << std::endl;
@@ -47,7 +46,6 @@ void Harl::complain(std::string level)
         if (levels[i] == level)
                 j = i;
     }
-
     switch (j)
     {
         case 0:
@@ -60,5 +58,4 @@ void Harl::complain(std::string level)
             (this->*f[3])();
             break;
     }
-
 }

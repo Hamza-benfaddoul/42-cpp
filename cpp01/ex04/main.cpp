@@ -13,30 +13,36 @@
 #include <iostream>
 #include <fstream>
 
-int	replace(char **argv, std::string str)
+int	replace(char **av, std::string str)
 {
-	int				pos;
+	size_t			pos;
+	static bool 	newfile;
 	std::ofstream	outfile;
 
-	outfile.open((std::string(argv[1]) + ".replace").c_str(), std::ios::app);
+	outfile.open((std::string(av[1]) + ".replace").c_str(), std::ofstream::app);
 	if (outfile.fail())
-		return (1);
-	for (int i = 0; i < (int)str.size(); i++)
 	{
-		pos = str.find(argv[2], i);
-		if (pos != -1 && pos == i)
+		std::cerr << "Error: Faile to open outfile" << std::endl;
+		return (1);
+	}
+	if (newfile)
+		outfile << std::endl;
+	newfile = true;
+	pos = str.find(av[2]);
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if (pos == i)
 		{
-			outfile << argv[3];
-			i += std::string(argv[2]).size() - 1;
+			outfile << av[3];
+			i += std::string(av[2]).size() - 1;
+			pos = str.find(av[2], i);
 		}
 		else
 			outfile << str[i];
 	}
-	outfile << std::endl;
 	outfile.close();
 	return (0);
 }
-
 
 int main(int ac, char **av)
 {
@@ -55,17 +61,12 @@ int main(int ac, char **av)
 		std::cout << "Error: Failed to open file" << std::endl;
 		return (1);
 	}
-	if (std::ifstream((std::string(av[1]) + ".replace").c_str()))
-	{
+	if(std::ifstream(std::string(av[1]) + ".replace"))
 		std::remove((std::string(av[1]) + ".replace").c_str());
-	}
 	while (std::getline(ifile, str))
 	{
 		if (replace(av, str))
-		{
-			std::cout << "Error: Failed to create file" << std::endl;
 			return (1);
-		}
 	}
 	ifile.close();
 	return (0);
