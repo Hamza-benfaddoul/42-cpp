@@ -32,18 +32,19 @@ void    Contact::getContact()
     std::cout << "darkest secret: " << this->darkest_secret << std::endl;
 } 
 
-void    Contact::setContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
+int   Contact::setContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
     if ( first_name.empty() || last_name.empty() || nickname.empty() || phone_number.empty() || darkest_secret.empty())
     {
         std::cout << "\033[31mError: empty field\033[0m\n" << std::endl;
-        return ;
+        return 1;
     }
     this->first_name = first_name;
     this->last_name = last_name;
     this->nickname = nickname;
     this->phone_number = phone_number;
     this->darkest_secret = darkest_secret;
+    return (0);
 }
 
 void Contact::display_contact()

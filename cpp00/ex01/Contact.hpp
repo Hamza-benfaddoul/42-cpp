@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:39:12 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/06/05 11:52:06 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:57:49 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
 	Contact();
 	~Contact();
-	void setContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
+	int setContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
 	void getContact(void);
 	void display_contact(void);
 };
