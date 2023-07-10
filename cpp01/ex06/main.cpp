@@ -12,12 +12,14 @@
 
 #include "Harl.hpp"
 
-int main(void)
+int main(int ac, char **av)
 {
-    Harl harl;
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
+    if(ac > 1)
+    {
+        Harl harl;
+        harl.complain(av[1]);
+    }
+    else
+        std::cout << "Usage: ./harlFilter [DEBUG, INFO, WARNING, ERROR]" << std::endl;
     return (0);
 }

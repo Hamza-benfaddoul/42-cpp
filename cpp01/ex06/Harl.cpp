@@ -38,7 +38,7 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-    int j = 0;
+    int j = -1;
     void (Harl::*f[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     for (int i = 0; i < 4; i++)
@@ -56,6 +56,9 @@ void Harl::complain(std::string level)
             (this->*f[2])();
         case 3:
             (this->*f[3])();
+            break;
+        default:
+            std::cout << "Wrong level" << std::endl;
             break;
     }
 }
