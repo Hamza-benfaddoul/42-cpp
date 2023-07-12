@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Fixed.hpp"
 
 /* Constructors */
@@ -18,11 +17,11 @@ Fixed::Fixed(): _fixedPointValue(0){
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int i): _fixedPointValue(i * (256)){
+Fixed::Fixed(const int i): _fixedPointValue(i << _fractionalBits){
     std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float f): _fixedPointValue(std::roundf((f * (256)))){
+Fixed::Fixed(const float f): _fixedPointValue(std::roundf((f * (0x1 << _fractionalBits)))){
     std::cout << "Float constructor called" << std::endl;
 }
 
@@ -43,6 +42,7 @@ Fixed& Fixed::operator=(const Fixed& other)
     this->_fixedPointValue = other.getRawBits();
     return (*this);
 }
+
 std::ostream& operator<<(std::ostream& os, const Fixed& other) {
     os << other.toFloat();
     return (os);
@@ -62,5 +62,5 @@ int Fixed::toInt(void) const{
 }
 
 float Fixed::toFloat(void) const{
-    return (static_cast<float>(_fixedPointValue / (256)));
+    return ((float)(_fixedPointValue) / (0x1 << _fractionalBits));
 }
