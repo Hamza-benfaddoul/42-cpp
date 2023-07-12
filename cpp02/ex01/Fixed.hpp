@@ -5,27 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 15:43:07 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/11 11:45:23 by hbenfadd         ###   ########.fr       */
+/*   Created: 2023/07/11 11:30:19 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/07/11 12:26:50 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-# define FIXED_HPP
-
-# include <iostream>
+#define FIXED_HPP
+#include <iostream>
+#include <cmath>
 
 class	Fixed{
 	public:
 		Fixed();
 		Fixed(const Fixed &other);
+		Fixed(const int i);
+		Fixed(const float f);
 		~Fixed();
 		Fixed&	operator=(const Fixed& other);
 		void	setRawBits(int const rew);
 		int		getRawBits(void) const;
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
 	private:
 		int					_fixedPointValue;
 		static const int	_fractionalBits = 8;
 };
-
-#endif /* FIXED_HPP */
+std::ostream& operator<<(std::ostream& os, const Fixed& other);
+#endif /*FIXED_HPP*/
