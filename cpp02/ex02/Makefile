@@ -1,6 +1,18 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/07/13 09:31:32 by hbenfadd          #+#    #+#              #
+#    Updated: 2023/07/13 09:31:33 by hbenfadd         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 Name		= a.out
 CXX 		= c++
-CXXFLAGS	= -Wall -Wextra -Werror
+CXXFLAGS	= -Wall -Wextra -Werror --std=c++98
 
 SRC			= main.cpp Fixed.cpp
 

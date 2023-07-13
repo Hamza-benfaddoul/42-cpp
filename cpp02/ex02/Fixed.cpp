@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:56:50 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/12 19:30:43 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/13 07:51:08enfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* Constructors */
 Fixed::Fixed(): _fixedPointValue(0){}
 
-Fixed::Fixed(const int i): _fixedPointValue(i << _fractionalBits){}
+Fixed::Fixed(const int i): _fixedPointValue(i * (0x1 << _fractionalBits)){}
 
 Fixed::Fixed(const float f): _fixedPointValue(std::roundf((f * (0x1 << _fractionalBits)))){}
 
@@ -68,32 +68,38 @@ bool Fixed::operator!=(const Fixed & other) const{
 	return (false);
 }
 
-Fixed& Fixed::operator+(const Fixed& other){
-	return(Fixed(this->_fixedPointValue + other._fixedPointValue));
+Fixed Fixed::operator+(const Fixed& other)const{
+	return((this->toFloat() + other.toFloat()));
 }
 
-Fixed& Fixed::operator-(const Fixed& other){
-	return(this->_fixedPointValue - other._fixedPointValue);
+Fixed Fixed::operator-(const Fixed& other) const{
+	return(this->toFloat() - other.toFloat());
 }
 
-Fixed Fixed::operator*(const Fixed& other) {
+Fixed Fixed::operator*(const Fixed& other) const{
 	return(this->toFloat() * other.toFloat());
 }
 
-int Fixed::operator/(const Fixed& other){
-	return(this->_fixedPointValue / other._fixedPointValue);
+Fixed Fixed::operator/(const Fixed& other) const{
+	return(this->toFloat() / other.toFloat());
 }
 
 	/* pos-increment*/
-Fixed Fixed::operator++(int){
+Fixed Fixed::operator++(int nbr){
 	Fixed tmp =  *this;
-	this->_fixedPointValue++;
+	if (!nbr)
+		this->_fixedPointValue++;
+	else
+		this->_fixedPointValue += nbr;
 	return (tmp);
 }
 	/* pos-decrement*/
-Fixed Fixed::operator--(int){
+Fixed Fixed::operator--(int nbr){
 	Fixed tmp = *this;
-	this->_fixedPointValue--;
+	if(!nbr)
+		this->_fixedPointValue--;
+	else
+		this->_fixedPointValue -= nbr;
 	return (tmp);
 }
 
