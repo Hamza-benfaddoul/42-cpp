@@ -69,19 +69,19 @@ bool Fixed::operator!=(const Fixed & other) const{
 }
 
 Fixed Fixed::operator+(const Fixed& other)const{
-	return((this->toFloat() + other.toFloat()));
+	return((this->_fixedPointValue + other._fixedPointValue));
 }
 
 Fixed Fixed::operator-(const Fixed& other) const{
-	return(this->toFloat() - other.toFloat());
+	return(this->_fixedPointValue - other._fixedPointValue);
 }
 
 Fixed Fixed::operator*(const Fixed& other) const{
-	return(this->toFloat() * other.toFloat());
+	return((float)(this->toFloat() * other.toFloat()));
 }
 
 Fixed Fixed::operator/(const Fixed& other) const{
-	return(this->toFloat() / other.toFloat());
+	return((float)(this->toFloat() / other.toFloat()));
 }
 
 	/* pos-increment*/
