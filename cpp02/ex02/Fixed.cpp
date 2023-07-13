@@ -27,53 +27,52 @@ Fixed::Fixed(const Fixed &other){
 Fixed::~Fixed(){}
 
 /* Operatros */
-Fixed& Fixed::operator=(const Fixed& other)
-{
+Fixed& Fixed::operator=(const Fixed& other) {
     this->_fixedPointValue = other.getRawBits();
     return (*this);
 }
 
-bool Fixed::operator<(const Fixed & other){
+bool Fixed::operator<(const Fixed & other) const{
 	if (this->_fixedPointValue < other._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator>(const Fixed & other){
+bool Fixed::operator>(const Fixed & other) const{
 	if (this->_fixedPointValue > other._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator>=(const Fixed & other){
+bool Fixed::operator>=(const Fixed & other) const{
 	if (this->_fixedPointValue >= other._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator<=(const Fixed & other){
+bool Fixed::operator<=(const Fixed & other) const{
 	if (this->_fixedPointValue <= other._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator==(const Fixed & other){
+bool Fixed::operator==(const Fixed & other) const{
 	if (this->_fixedPointValue == other._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator!=(const Fixed & other){
+bool Fixed::operator!=(const Fixed & other) const{
 	if (this->_fixedPointValue != other._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-int Fixed::operator+(const Fixed& other){
-	return(this->_fixedPointValue + other._fixedPointValue);
+Fixed& Fixed::operator+(const Fixed& other){
+	return(Fixed(this->_fixedPointValue + other._fixedPointValue));
 }
 
-int Fixed::operator-(const Fixed& other){
+Fixed& Fixed::operator-(const Fixed& other){
 	return(this->_fixedPointValue - other._fixedPointValue);
 }
 
@@ -138,8 +137,20 @@ Fixed& Fixed::min(Fixed& a, Fixed& b){
 	return (b);
 }
 
-Fixed& Fixed::max(Fixed& a, const Fixed& b){
+Fixed& Fixed::min(const Fixed& a, const Fixed& b){
+	if (a._fixedPointValue < b._fixedPointValue)
+		return ((Fixed&)a);
+	return ((Fixed&)b);
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b){
 	if (a._fixedPointValue > b._fixedPointValue)
 		return (a);
+	return (b);
+}
+
+Fixed& Fixed::max(const Fixed& a, const Fixed& b){
+	if (a._fixedPointValue > b._fixedPointValue)
+		return ((Fixed&)a);
 	return ((Fixed&)b);
 }
