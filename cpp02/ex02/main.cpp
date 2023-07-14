@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:27:39 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/13 09:31:48 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/14 10:16:30 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 int main(void)
 {
     Fixed a;
-    Fixed c(5.05f);
     Fixed const b(Fixed(5.05f) * Fixed(2));
     std::cout <<  a << std::endl;
     std::cout << ++a << std::endl;
