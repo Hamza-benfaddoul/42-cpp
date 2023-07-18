@@ -11,43 +11,11 @@
 /* ************************************************************************** */
 
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap clap("Clap");
-	ClapTrap clap2("Clap2");
-
-	clap.attack("Clap2");
-	clap2.takeDamage(10);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
+	ScavTrap scav1;
+	ScavTrap scav2(scav1);
+	scav2.attack("hamza");
 }

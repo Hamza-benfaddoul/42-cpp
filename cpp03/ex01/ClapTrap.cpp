@@ -14,18 +14,32 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap():_name("Unknown"), _hit_points(100), _energy_points(50), _attack_damage(20){}
+ClapTrap::ClapTrap()
+	:_name("Unknown"), _hit_points(10), _energy_points(10), _attack_damage(0)
+{
+	std::cout << "[ ClapTrap ] --> default consturctor called" << std::endl;
+}
 
-ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(100), _energy_points(50), _attack_damage(20) {}
+ClapTrap::ClapTrap(std::string name)
+	: _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
+{
 
-ClapTrap::ClapTrap(const ClapTrap& other):
-	_name(other._name),
+	std::cout << "[ ClapTrap ] --> parametrize consturctor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+	: _name(other._name),
 	_hit_points(other._hit_points),
 	_energy_points(other._energy_points),
 	_attack_damage(other._attack_damage)
-{}
+{
 
-ClapTrap::~ClapTrap(){}
+	std::cout << "[ ClapTrap ] --> copy consturctor called" << std::endl;
+}
+
+ClapTrap::~ClapTrap(){
+	std::cout << "[ ClapTrap ] --> destractutor called" << std::endl; 
+}
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other){
 	_name = other._name;
