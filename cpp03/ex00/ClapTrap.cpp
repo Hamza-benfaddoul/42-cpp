@@ -14,20 +14,40 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap():_name("Unknown"), _hit_points(10), _energy_points(10), _attack_damage(0){}
+ClapTrap::ClapTrap()
+  :_name("Unknown"),
+  _hit_points(10),
+  _energy_points(10),
+  _attack_damage(0)
+{
+  std::cout << "[ CalpTrap ] --> Default constructor called" << std::endl;
+}
 
-ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {}
+ClapTrap::ClapTrap(std::string name)
+  : _name(name),
+  _hit_points(10),
+  _energy_points(10),
+  _attack_damage(0)
+{
+  std::cout << "[ CalpTrap ] --> parametrize constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(const ClapTrap& other):
 	_name(other._name),
 	_hit_points(other._hit_points),
 	_energy_points(other._energy_points),
 	_attack_damage(other._attack_damage)
-{}
+{
+  std::cout << "[ CalpTrap ] --> copy constructor called" << std::endl;
+}
 
-ClapTrap::~ClapTrap(){}
+ClapTrap::~ClapTrap()
+{
+  std::cout << "[ CalpTrap ] --> destructor called" << std::endl;
+}
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other){
+  std::cout << "[ CalpTrap ] --> assignment operator called" << std::endl;
 	_name = other._name;
 	_hit_points = other._hit_points;
 	_attack_damage = other._attack_damage;
@@ -41,7 +61,7 @@ void ClapTrap::attack(const std::string& target){
 		_energy_points--;
 	}
 	else
-		std::cout << _name <<  " can't attacks " << target << std::endl;
+		std::cout << _name <<  " is daed"<< std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
@@ -52,7 +72,6 @@ void ClapTrap::takeDamage(unsigned int amount){
 			_hit_points-= amount;
 		else
 			_hit_points = 0;
-
 		std::cout << "ClapTrap " << _name << " take " << amount << " damages." <<std::endl;
 	}
 	else

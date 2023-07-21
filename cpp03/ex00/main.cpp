@@ -10,44 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ClapTrap.hpp"
 
 int	main(void)
 {
 	ClapTrap clap("Clap");
-	ClapTrap clap2("Clap2");
 
-	clap.attack("Clap2");
-	clap2.takeDamage(10);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
-	clap.attack("Clap2");
-	clap2.takeDamage(1);
-	clap2.attack("Clap");
-	clap.takeDamage(1);
+  clap.takeDamage(9);
+  clap.attack("foo");
+  clap.beRepaired(9);
+  clap.takeDamage(10);
+  clap.attack("foo");
+
+  return(0);
 }
+
