@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:06:58 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/21 21:29:48 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/21 22:03:50 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::
-
 ClapTrap::ClapTrap()
-	:_name("Unknown"), _hit_points(10), _energy_points(10), _attack_damage(0)
+	:_name("Unknown" + std::string("_clap_name")), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "[ ClapTrap ] --> default consturctor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
-	: _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
+	: _name(name + std::string("_clap_name")), _hit_points(10),
+	_energy_points(10), _attack_damage(0)
 {
 	std::cout << "[ ClapTrap ] --> parametrize consturctor called" << std::endl;
 }
@@ -51,12 +50,11 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other){
 void ClapTrap::attack(const std::string& target){
 	if (_energy_points && _hit_points)
 	{
-		std::cout << "ClapTrap " << _name << " attacks " << target
-				<< " causing " << _attack_damage << " points of damage!" <<std::endl;
+		std::cout << "ClapTrap " << _name << " attacks " << target << " causing " << _attack_damage << " points of damage!" <<std::endl;
 		_energy_points--;
 	}
 	else
-		std::cout << _name <<  " can't attacks " << target << std::endl;
+		std::cout << _name <<  " is dead" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
