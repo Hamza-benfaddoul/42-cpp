@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:28:24 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/21 16:15:02 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/22 11:32:00 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 #include <cstdio>
 
 ScavTrap::ScavTrap()
+	: ClapTrap("Unknown")
 {
 	std::cout << "[ ScavTrap ] --> Default constructor called" << std::endl;
-	this->_name = "Unknown";
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name)
+	: ClapTrap()
 {
 	std::cout << "[ ScavTrap ] --> parametrize constructor called" << std::endl;
 	this->_name = name;
@@ -50,6 +51,18 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "[ ScavTrap ] --> destructor called" << std::endl;
+}
+
+void	ScavTrap::attack(std::string const & target)
+{
+	if (_energy_points && _hit_points)
+	{
+		std::cout << "ScavTrap " << _name << " attacks " << target
+					<< " causing " << _attack_damage << " points of damage!" <<std::endl;
+		_energy_points--;
+	}
+	else
+		std::cout << _name <<  " is dead" << std::endl;
 }
 
 void	ScavTrap::guardGate()

@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:28:24 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/21 21:38:37 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/22 11:21:46 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	ScavTrap(const ScavTrap&);
     ScavTrap& operator=(const ScavTrap&);
     ~ScavTrap();
+    void attack(std::string const & target);
 	void guardGate();
 };
 

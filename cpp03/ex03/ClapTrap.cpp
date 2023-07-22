@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:06:58 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/21 22:03:50 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/22 11:30:13 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 
 ClapTrap::ClapTrap()
-	:_name("Unknown" + std::string("_clap_name")), _hit_points(10), _energy_points(10), _attack_damage(0)
+	:_name("Unknown"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "[ ClapTrap ] --> default consturctor called" << std::endl;
 }
@@ -50,7 +50,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other){
 void ClapTrap::attack(const std::string& target){
 	if (_energy_points && _hit_points)
 	{
-		std::cout << "ClapTrap " << _name << " attacks " << target << " causing " << _attack_damage << " points of damage!" <<std::endl;
+		std::cout << "ClapTrap " << _name << " attacks " << target
+					<< " causing " << _attack_damage << " points of damage!" <<std::endl;
 		_energy_points--;
 	}
 	else
@@ -75,7 +76,8 @@ void ClapTrap::takeDamage(unsigned int amount){
 void ClapTrap::beRepaired(unsigned int amount){
 	if (_energy_points && _hit_points)
 	{
-		std::cout << "ClapTrap " << _name << " is repaired of " << amount << " points." <<std::endl;
+		std::cout << "ClapTrap " << _name << " is repaired of " << amount
+					<< " points." <<std::endl;
 		if (_hit_points + amount < 10)
 			_hit_points += amount;
 		else
@@ -85,4 +87,3 @@ void ClapTrap::beRepaired(unsigned int amount){
 	else
 		std::cout << _name <<  " is dead" << std::endl;
 }
-

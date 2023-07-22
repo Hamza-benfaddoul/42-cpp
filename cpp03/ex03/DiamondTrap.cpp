@@ -6,20 +6,20 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 21:40:59 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/21 22:16:16 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/22 11:43:21 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
-	:_name("Unknown")
+	:ClapTrap("Unknown"), _name("Unknown")
 {
 	std::cout << "[ DiamondTrap ] --> Default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name)
-	: _name(name), ClapTrap(),  ScavTrap(), FragTrap()
+	:  ClapTrap(name), ScavTrap(), FragTrap(), _name(name)
 {
 	_hit_points = FragTrap::_hit_points;
 	_energy_points = ScavTrap::_energy_points;
@@ -49,7 +49,13 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "[ DiamondTrap ] --> Destructor called" << std::endl;
 }
 
+void DiamondTrap::attack(std::string const & target)
+{
+	ScavTrap::attack(target);
+}
+
 void DiamondTrap::whoAmI()
 {
-	std::cout << ClapTrap::_name << std::endl;
+	std::cout << "DiamondTrap name is " << _name
+				<< " and ClapTrap name is " << ClapTrap::_name << std::endl;
 }
