@@ -14,8 +14,6 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::
-
 ClapTrap::ClapTrap()
 	:_name("Unknown"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
@@ -25,7 +23,6 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-
 	std::cout << "[ ClapTrap ] --> parametrize consturctor called" << std::endl;
 }
 
@@ -35,7 +32,6 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	_energy_points(other._energy_points),
 	_attack_damage(other._attack_damage)
 {
-
 	std::cout << "[ ClapTrap ] --> copy consturctor called" << std::endl;
 }
 
@@ -57,7 +53,7 @@ void ClapTrap::attack(const std::string& target){
 		_energy_points--;
 	}
 	else
-		std::cout << _name <<  " can't attacks " << target << std::endl;
+		std::cout << _name <<  " is dead" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
