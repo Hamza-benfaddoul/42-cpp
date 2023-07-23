@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:28:24 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/21 16:15:02 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/23 13:09:12 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,18 @@ ScavTrap::~ScavTrap()
 	std::cout << "[ ScavTrap ] --> destructor called" << std::endl;
 }
 
+void ScavTrap::attack(const std::string& target)
+{
+	if (_energy_points && _hit_points)
+	{
+		std::cout << "ScavTrap " << _name << " attacks " << target << " causing " << _attack_damage << " points of damage!" << std::endl;
+		_energy_points--;
+	}
+	else
+		std::cout << _name << " is daed" << std::endl;
+}
+
 void	ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:28:24 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/18 10:50:31 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/23 13:09:48 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ public:
 	ScavTrap(const ScavTrap&);
     ScavTrap& operator=(const ScavTrap&);
     ~ScavTrap();
+    void attack(const std::string& target);
 	void guardGate();
 };
 
 #endif /* SCAVTRAP_H */
-
