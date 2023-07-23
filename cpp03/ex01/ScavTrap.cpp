@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:28:24 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/23 13:09:12 by hamza            ###   ########.fr       */
+/*   Updated: 2023/07/23 15:56:15 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "[ ScavTrap ] --> parametrize constructor called" << std::endl;
+	std::cout << "[ ScavTrap ] --> Parametrize constructor called" << std::endl;
 	this->_name = name;
 	this->_hit_points = 100;
 	this->_energy_points = 50;
@@ -34,12 +34,13 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap(const ScavTrap& other)
 	: ClapTrap()
 {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << "[ ScavTrap ] --> Copy constructor called" << std::endl;
 	*this = other;
 }
  
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
+	std::cout << "[ ScavTrap ] --> Assignement operator called" << std::endl;
 	this->_name = other._name;
 	this->_hit_points = other._hit_points;
 	this->_energy_points = other._energy_points;
@@ -49,7 +50,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "[ ScavTrap ] --> destructor called" << std::endl;
+	std::cout << "[ ScavTrap ] --> Destructor called" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
