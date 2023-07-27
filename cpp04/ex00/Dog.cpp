@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:59:30 by hamza             #+#    #+#             */
-/*   Updated: 2023/07/19 17:01:27 by hamza            ###   ########.fr       */
+/*   Updated: 2023/07/27 11:27:33 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,7 @@ Dog::~Dog()
   std::cout << "[ Dog ] --> destructor called" << std::endl;
 }
 
+void Dog::makeSound() const
+{
+  std::cout << _type << " make " << _sound << " sound" << std::endl;
+}

@@ -29,3 +29,7 @@ Cat::~Cat()
   std::cout << "[ Cat ] --> destructor called" << std::endl;
 }
 
+void Cat::makeSound() const
+{
+  std::cout << _type << " make " << _sound << " sound" << std::endl;
+}

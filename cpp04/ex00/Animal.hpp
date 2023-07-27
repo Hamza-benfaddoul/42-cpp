@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:58:26 by hamza             #+#    #+#             */
-/*   Updated: 2023/07/19 17:00:46 by hamza            ###   ########.fr       */
+/*   Updated: 2023/07/27 11:21:39 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Animal(const Animal& other);
 	Animal &operator=(const Animal& other);
 	~Animal();
-  void  makeSound();
+	virtual void makeSound() const;
 
 protected:
 	std::string	_type;
