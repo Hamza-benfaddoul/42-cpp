@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/27 11:16:15 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/07/27 11:18:47 by hbenfadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Brain.hpp"
+
+Brain::Brain()
+{
+    std::cout << "[ Brain ] --> constructor called" << std::endl;
+}
+
+Brain::Brain(Brain const &other)
+{
+    std::cout << "[ Brain ] --> copy constructor called" << std::endl;
+    *this = other;
+}
+
+Brain &Brain::operator=(Brain const &other)
+{
+    std::cout << "[ Brain ] --> assignation operator called" << std::endl;
+    if (this != &other)
+    {
+        for (int i = 0; i < 100; i++)
+            this->ideas[i] = other.ideas[i];
+    }
+    return (*this);
+}
+
+Brain::~Brain()
+{
+    std::cout << "[ Brain ] --> destructor called" << std::endl;
+}
