@@ -1,0 +1,38 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/07/29 15:05:03 by hbenfadd          #+#    #+#              #
+#    Updated: 2023/07/29 15:25:32 by hbenfadd         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = ex03
+
+SRCS = main.cpp MaterialSource.cpp Character.cpp  Ice.cpp Cure.cpp AMateria.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+%.o: %.cpp
+	clang++ $(FLAGS) -c $< -o $@
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	clang++ $(FLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -rf $(OBJS)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
+
+run: re
+	./$(NAME)
