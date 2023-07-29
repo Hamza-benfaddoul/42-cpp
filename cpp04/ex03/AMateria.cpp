@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:37:58 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 14:44:24 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:53:57 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ AMateria::AMateria()
 AMateria::AMateria(std::string const &type)
     : _type(type)
 {}
-
-std::string const &AMateria::getType() const
-{
-    return (this->_type);
-}
 
 AMateria::AMateria(AMateria const &other)
 {

@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:27:27 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 15:31:13 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:49:33 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define ICHARACTER_H
 # include <iostream>
 # include <string>
-# include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

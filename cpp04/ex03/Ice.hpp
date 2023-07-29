@@ -6,13 +6,14 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:48:08 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 14:50:03 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:51:47 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 # define ICE_HPP
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Ice : public AMateria
 {

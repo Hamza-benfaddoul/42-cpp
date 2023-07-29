@@ -6,13 +6,13 @@
 #    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 15:05:03 by hbenfadd          #+#    #+#              #
-#    Updated: 2023/07/29 15:25:32 by hbenfadd         ###   ########.fr        #
+#    Updated: 2023/07/29 15:50:22 by hbenfadd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex03
 
-SRCS = main.cpp MaterialSource.cpp Character.cpp  Ice.cpp Cure.cpp AMateria.cpp
+SRCS = main.cpp MateriaSource.cpp Character.cpp  Ice.cpp Cure.cpp AMateria.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

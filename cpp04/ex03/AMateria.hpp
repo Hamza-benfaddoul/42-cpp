@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:23:45 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 14:41:22 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:49:41 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define AMATERIA_H
 # include <iostream>
 # include <string>
-# include "ICharacter.hpp"
+//# include "ICharacter.hpp"
 
+class ICharacter;
 
 class AMateria
 {
