@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:58:26 by hamza             #+#    #+#             */
-/*   Updated: 2023/08/03 16:09:49 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:42:27 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	Animal();
 	Animal(const Animal& other);
 	Animal &operator=(const Animal& other);
-	~Animal();
+	virtual ~Animal();
 	virtual void makeSound() const;
 	std::string getType() const;
 
