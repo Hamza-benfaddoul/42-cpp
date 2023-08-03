@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:23:07 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/27 11:54:38 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:10:11 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Animal.hpp"
 
 Animal::Animal()
-  : _type("Animal"), _sound("Unknown")
+  : _type("Animal")
 {
   std::cout << "[ Animal ] --> Default constractor called" << std::endl;
 }
@@ -29,7 +29,6 @@ Animal& Animal::operator=(const Animal &other)
 {
   std::cout << "[ Animal ] --> assignment operator called" << std::endl;
   _type = other._type;
-  _sound = other._sound;
   return (*this);
 }
 
@@ -40,5 +39,12 @@ Animal::~Animal()
 
 void  Animal::makeSound() const
 {
-  std::cout << _type << " make " << _sound << " _sound" << std::endl;
+  std::cout << "Animal has no sound" << std::endl;
+}
+
+// member functions
+
+std::string Animal::getType() const
+{
+  return (_type);
 }

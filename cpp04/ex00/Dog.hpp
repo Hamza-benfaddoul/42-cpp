@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:24:30 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/27 11:25:24 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:01:53 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ public:
 	Dog &operator=(const Dog &);
 	~Dog();
 	void makeSound() const;
+
+private:
+	std::string _sound;
 };
 
 #endif /* DOG_HPP */
