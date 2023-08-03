@@ -5,14 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 11:29:18 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/27 12:01:28 by hbenfadd         ###   ########.fr       */
+/*   Created: 2023/08/03 16:18:38 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/08/03 16:25:55y hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Cat.hpp"
-
 
 Cat::Cat()
 {
@@ -33,15 +31,16 @@ Cat& Cat::operator=(const Cat& other)
 {
   std::cout << "[ Cat ] --> assignment operator called" << std::endl;
   _type = other._type;
-  _sound = other._sound;
-  _brain = new Brain(*other._brain);
+  _brain = new Brain();
+  for (int i = 0; i < 100; i++)
+    _brain->setIdea(i, other._brain->getIdea(i));
   return (*this);
 }
 
 Cat::~Cat()
 {
-  std::cout << "[ Cat ] --> destructor called" << std::endl;
   delete _brain;
+  std::cout << "[ Cat ] --> destructor called" << std::endl;
 }
 
 void Cat::makeSound() const

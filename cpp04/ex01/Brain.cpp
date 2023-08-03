@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:16:15 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/27 11:18:47 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:34:44 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Brain::Brain(Brain const &other)
     *this = other;
 }
 
-Brain &Brain::operator=(Brain const &other)
+Brain &Brain::operator=(const Brain &other)
 {
     std::cout << "[ Brain ] --> assignation operator called" << std::endl;
     if (this != &other)
@@ -37,4 +37,16 @@ Brain &Brain::operator=(Brain const &other)
 Brain::~Brain()
 {
     std::cout << "[ Brain ] --> destructor called" << std::endl;
+}
+
+/* member functions */
+
+std::string Brain::getIdea(int i) const
+{
+    return (this->ideas[i]);
+}
+
+void Brain::setIdea(int i, std::string idea)
+{
+    this->ideas[i] = idea;
 }
