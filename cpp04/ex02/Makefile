@@ -6,13 +6,11 @@
 #    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 11:15:42 by hbenfadd          #+#    #+#              #
-#    Updated: 2023/07/28 19:04:04 by hbenfadd         ###   ########.fr        #
+#    Updated: 2023/08/03 17:16:51 by hbenfadd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-
-NAME			= brain
+NAME			= ex02
 
 CXX				= c++
 CXXFLAGS	=	-Wall -Wextra -Werror

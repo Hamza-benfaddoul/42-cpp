@@ -23,11 +23,10 @@ public:
 	AAnimal(const AAnimal& other);
 	AAnimal &operator=(const AAnimal& other);
 	virtual ~AAnimal();
- virtual void  makeSound() const  = 0;
+	virtual void makeSound() const = 0;
 
 protected:
 	std::string	_type;
-	std::string _sound;
 };
 
 #endif /* AMIMAL_HPP */

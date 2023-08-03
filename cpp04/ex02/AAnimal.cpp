@@ -14,7 +14,7 @@
 #include "AAnimal.hpp"
 
 AAnimal::AAnimal()
-  : _type("AAnimal") , _sound("Unknown")
+  : _type("AAnimal")
 {
   std::cout << "[ AAnimal ] --> Default constractor called" << std::endl;
 }
@@ -29,16 +29,10 @@ AAnimal& AAnimal::operator=(const AAnimal &other)
 {
   std::cout << "[ AAnimal ] --> assignment operator called" << std::endl;
   _type = other._type;
-  _sound = other._sound;
   return (*this);
 }
 
 AAnimal::~AAnimal()
 {
   std::cout << "[ AAnimal ] --> Destructor called" << std::endl;
-}
-
-void  AAnimal::makeSound() const
-{
-  std::cout << "AAnimal" << " make " << _sound << " sound" << std::endl;
 }
