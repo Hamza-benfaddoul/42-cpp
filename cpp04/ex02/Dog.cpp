@@ -6,12 +6,11 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:59:30 by hamza             #+#    #+#             */
-/*   Updated: 2023/08/03 17:19:13 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/04 15:09:18 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-
 
 Dog::Dog()
 {
@@ -22,15 +21,19 @@ Dog::Dog()
 }
 
 Dog::Dog(const Dog& other)
-  : AAnimal(other)
+  : AAnimal()
 {
   std::cout << "[ Dog ] --> copy constructor called" << std::endl;
-  *this = other;
+  _type = other._type;
+  _brain = new Brain();
+  for (int i = 0; i < 100; i++)
+    _brain->setIdea(i, other._brain->getIdea(i));
 }
 
 Dog& Dog::operator=(const Dog& other)
 {
   std::cout << "[ Dog ] --> assignment operator called" << std::endl;
+  delete _brain;
   _type = other._type;
   _brain = new Brain();
   for (int i = 0; i < 100; i++)

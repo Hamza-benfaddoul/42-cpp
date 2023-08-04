@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:18:51 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/08/03 16:18:55 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/04 15:04:20 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ Cat::Cat()
 Cat::Cat(const Cat& other)
   : Animal(other)
 {
-  *this = other;
   std::cout << "[ Cat ] --> copy constructor called" << std::endl;
+  *this = other;
 }
 
 Cat& Cat::operator=(const Cat& other)

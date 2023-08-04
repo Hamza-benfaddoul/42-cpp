@@ -21,15 +21,19 @@ Cat::Cat()
 }
 
 Cat::Cat(const Cat& other)
-  : AAnimal(other)
+  : AAnimal()
 {
-  *this = other;
   std::cout << "[ Cat ] --> copy constructor called" << std::endl;
+  _type = other._type;
+  _brain = new Brain();
+  for (int i = 0; i < 100; i++)
+    _brain->setIdea(i, other._brain->getIdea(i));
 }
 
 Cat& Cat::operator=(const Cat& other)
 {
   std::cout << "[ Cat ] --> assignment operator called" << std::endl;
+  delete _brain;
   _type = other._type;
   _brain = new Brain();
   for (int i = 0; i < 100; i++)

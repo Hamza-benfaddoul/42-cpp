@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:59:30 by hamza             #+#    #+#             */
-/*   Updated: 2023/07/27 11:27:33 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/04 15:04:34 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ Dog::Dog()
 Dog::Dog(const Dog& other)
   : Animal(other)
 {
-  *this = other;
   std::cout << "[ Dog ] --> copy constructor called" << std::endl;
+  *this = other;
 }
 
 Dog& Dog::operator=(const Dog& other)

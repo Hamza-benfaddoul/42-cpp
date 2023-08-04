@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:32:30 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/08/03 16:41:19 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/04 14:57:25 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@
 
 int main()
 {
-  const Animal *j = new Dog();
-  const Animal *i = new Cat();
-  delete j; // should not create a leak
-  delete i;
+  // const Animal *j = new Dog();
+  // const Animal *i = new Cat();
+  // delete j; // should not create a leak
+  // delete i;
+  Cat a;
+  Cat b(a);
+
+  system("leaks ex01");
+
   return 0;
 }
