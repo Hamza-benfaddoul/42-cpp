@@ -6,7 +6,7 @@
 #    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 15:05:03 by hbenfadd          #+#    #+#              #
-#    Updated: 2023/07/29 15:50:22 by hbenfadd         ###   ########.fr        #
+#    Updated: 2023/08/13 15:16:58 by hbenfadd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp MateriaSource.cpp Character.cpp  Ice.cpp Cure.cpp AMateria.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 %.o: %.cpp
 	clang++ $(FLAGS) -c $< -o $@

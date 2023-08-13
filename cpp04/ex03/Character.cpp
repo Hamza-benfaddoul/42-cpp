@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:56:45 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/08/13 12:07:53 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:10:54 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 /* Constructors */
 
-Character::Character() : _name("default"), _count(0)
+Character::Character() : _name("default"), _count(0), _save_inventory(NULL)
 {
     for (int i = 0; i < 4; i++)
         this->_inventory[i] = NULL;
 }
 
-Character::Character(Character const &other) : _name(other._name), _count(other._count)
+Character::Character(Character const &other) : _name(other._name), _count(other._count), _save_inventory(NULL)
 {
     for (int i = 0; i < 4; i++)
         this->_inventory[i] = other._inventory[i];
 }
 
-Character::Character(std::string const &name) : _name(name), _count(0)
+Character::Character(std::string const &name) : _name(name), _count(0), _save_inventory(NULL)
 {
     for (int i = 0; i < 4; i++)
         this->_inventory[i] = NULL;
@@ -36,6 +36,13 @@ Character::Character(std::string const &name) : _name(name), _count(0)
 
 Character::~Character()
 {
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_inventory[i])
+            delete this->_inventory[i];
+    }
+    if (_save_inventory)
+        delete _save_inventory;
 }
 
 /* Operators */
@@ -45,7 +52,7 @@ Character &Character::operator=(Character const &other)
     this->_name = other._name;
     this->_count = other._count;
     for (int i = 0; i < 4; i++)
-        this->_inventory[i] = other._inventory[i];
+        this->_inventory[i] = other._inventory[i]->clone();
     return (*this);
 }
 
@@ -60,15 +67,23 @@ void Character::equip(AMateria *m)
 {
     if (this->_count < 4)
     {
-        for (int i = 0; i < 3; i++)
+
+        for (int i = 0; i < 4; i++)
         {
             if (!this->_inventory[i])
             {
                 this->_inventory[i] = m;
-                break;
+                this->_count++;
+                return;
             }
         }
-        this->_count++;
+    }
+    else
+    {
+        std::cout << "Inventory is full" << std::endl;
+        if (_save_inventory)
+            delete _save_inventory;
+        _save_inventory = m;
     }
 }
 
@@ -83,6 +98,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (idx >= 0 && idx < 4)
+
+    if (idx >= 0 && idx < 4 && this->_inventory[idx])
         this->_inventory[idx]->use(target);
 }

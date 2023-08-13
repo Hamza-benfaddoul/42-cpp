@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:54:49 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 15:42:35 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:55:26 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Character : public ICharacter
         std::string _name;
         AMateria *_inventory[4];
         int _count;
+        AMateria *_save_inventory;
     public:
         Character();
         Character(Character const &other);

@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 15:03:28 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 15:04:44 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:56:08 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ MateriaSource::MateriaSource(MateriaSource const &other) : _index(other._index)
 
 MateriaSource::~MateriaSource()
 {
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_materia[i])
+            delete this->_materia[i];
+    }
 }
 
 /* Operators */
@@ -50,6 +55,12 @@ void MateriaSource::learnMateria(AMateria *m)
     {
         this->_materia[this->_index] = m;
         this->_index++;
+        
+    }
+    else
+    {
+        std::cout << "MateriaSource is full" << std::endl;
+        delete m;
     }
 }
 
