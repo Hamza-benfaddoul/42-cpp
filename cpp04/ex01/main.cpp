@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:32:30 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/08/13 11:09:35 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/13 11:13:42 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ int main()
 {
   run();
   
-  system("leaks ex01");
+  // system("leaks ex01");
  return 0;
 }
