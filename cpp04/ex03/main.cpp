@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:59:44 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 15:00:18 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:10:06 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
-
-int main()
+void run()
 {
     IMateriaSource *src = new MateriaSource();
     src->learnMateria(new Ice());
@@ -39,5 +38,12 @@ int main()
     delete me;
     delete src;
     
-    return 0;
+
+}
+
+int main()
+{
+    run();
+    system("leaks ex03");
+    return (0);
 }

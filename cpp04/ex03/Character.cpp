@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:56:45 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 14:57:23 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:07:53 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,14 @@ void Character::equip(AMateria *m)
 {
     if (this->_count < 4)
     {
-        this->_inventory[this->_count] = m;
+        for (int i = 0; i < 3; i++)
+        {
+            if (!this->_inventory[i])
+            {
+                this->_inventory[i] = m;
+                break;
+            }
+        }
         this->_count++;
     }
 }

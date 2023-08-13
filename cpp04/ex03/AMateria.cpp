@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:37:58 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/07/29 15:53:57 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:10:43 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ AMateria::AMateria(AMateria const &other)
 }
 
 AMateria::~AMateria()
-{}
+{
+}
 
 /* Operator overloads */
 AMateria &AMateria::operator=(AMateria const &other)
