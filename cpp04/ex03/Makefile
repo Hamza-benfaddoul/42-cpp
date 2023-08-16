@@ -15,16 +15,14 @@ NAME = ex03
 SRCS = main.cpp MateriaSource.cpp Character.cpp  Ice.cpp Cure.cpp AMateria.cpp
 
 OBJS = $(SRCS:.cpp=.o)
+CXX	 = clang++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g
-
-%.o: %.cpp
-	clang++ $(FLAGS) -c $< -o $@
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	clang++ $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

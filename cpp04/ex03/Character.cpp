@@ -89,8 +89,15 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-    if (idx >= 0 && idx < 4)
+    if (idx >= 0 && idx < 4 && this->_inventory[idx])
     {
+        if (_save_inventory)
+        {
+          delete _save_inventory;
+          _save_inventory = NULL;
+        }
+        if (!_save_inventory)
+          _save_inventory = this->_inventory[idx];
         this->_inventory[idx] = NULL;
         this->_count--;
     }
@@ -98,7 +105,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-
     if (idx >= 0 && idx < 4 && this->_inventory[idx])
         this->_inventory[idx]->use(target);
 }
