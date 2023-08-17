@@ -43,7 +43,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &other)
 {
     this->_index = other._index;
     for (int i = 0; i < 4; i++)
-        this->_materia[i] = other._materia[i];
+        this->_materia[i] = other._materia[i]->clone();
     return (*this);
 }
 
