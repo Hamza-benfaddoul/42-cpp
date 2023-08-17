@@ -16,6 +16,7 @@
 
 int main()
 {
+  std::cout << "--------------Main tst-----------------------" << std::endl;
   {
     const Animal *meta = new Animal();
     const Animal *j = new Dog();
@@ -25,8 +26,13 @@ int main()
     i->makeSound(); // will output the cat sound!
     j->makeSound();
     meta->makeSound();
+    
+    delete meta;
+    delete i;
+    delete j;
   }
-  std::cout << "----------------------------------------------" << std::endl;
+
+  std::cout << "--------------Wrong Classes-----------------------" << std::endl;
   {
     const WrongAnimal *meta = new WrongAnimal();
     const WrongAnimal *i = new WrongCat();
@@ -34,8 +40,8 @@ int main()
     i->makeSound(); // will output the cat sound!
     meta->makeSound();
 
+    delete meta;
+    delete i;
   }
-
-
   return 0;
 }
