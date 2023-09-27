@@ -5,8 +5,18 @@
 Bureaucrat::Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
-    : _name(name), _grade(grade)
-{}
+    : _name(name)
+{
+
+    if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+    else if (grade <= 150 && grade >= 1)
+        _grade = grade;
+    else if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else
+        _grade = grade;
+}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
     : _name(other._name), _grade(other._grade)
