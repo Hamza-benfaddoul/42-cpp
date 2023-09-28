@@ -4,6 +4,7 @@
 # include <iostream>
 # include <exception>
 # include "Bureaucrat.hpp"
+#include <ostream>
 #include <string>
 
 
@@ -22,7 +23,8 @@ class Form {
         int getIsSigned() const ;
         int getGradeToSign() const ;
         int getGradeToExecute() const ;
-        void    beSigned(Bureaucrat );
+        void    beSigned(Bureaucrat& Bureaucrat);
+        void    signForm(Bureaucrat& Bureaucrat);
     /* ---------------- Exception Classes ---------------- */
     class GradeTooHighException : public std::exception {
         public:
@@ -34,6 +36,6 @@ class Form {
     };
 };
 
-
+std::ostream& operator<<(std::ostream &os, Form &form);
 
 #endif /* FORM_HPP */

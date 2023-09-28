@@ -1,6 +1,7 @@
 
 
 #include "Bureaucrat.hpp"
+#include <string>
 
 Bureaucrat::Bureaucrat(){}
 
@@ -33,15 +34,28 @@ void Bureaucrat::incGrade(){
     if (_grade + 1 > 150)
         throw Bureaucrat::GradeTooLowException();
     else
-        _grade++;
+        _grade--;
 }
 
 void Bureaucrat::decGrade(){
     if (_grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
     else
-        _grade--;
+        _grade++;
 
+}
+
+const std::string	Bureaucrat::getName() const {
+	return (_name);
+}
+
+int	Bureaucrat::getGrade() const {
+	return (_grade);
+}
+
+std::ostream&	operator<<(std::ostream &os, Bureaucrat &bureaucrat){
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	return (os);
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
