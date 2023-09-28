@@ -33,14 +33,14 @@ void Bureaucrat::incGrade(){
     if (_grade + 1 > 150)
         throw Bureaucrat::GradeTooLowException();
     else
-        _grade++;
+        _grade--;
 }
 
 void Bureaucrat::decGrade(){
     if (_grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
     else
-        _grade--;
+        _grade++;
 
 }
 
