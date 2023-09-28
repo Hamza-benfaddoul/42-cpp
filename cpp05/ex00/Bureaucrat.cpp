@@ -1,6 +1,7 @@
 
 
 #include "Bureaucrat.hpp"
+#include <string>
 
 Bureaucrat::Bureaucrat(){}
 
@@ -42,6 +43,19 @@ void Bureaucrat::decGrade(){
     else
         _grade++;
 
+}
+
+const std::string	Bureaucrat::getName() const {
+	return (_name);
+}
+
+int	Bureaucrat::getGrade() const {
+	return (_grade);
+}
+
+std::ostream&	operator<<(std::ostream &os, Bureaucrat &bureaucrat){
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	return (os);
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {

@@ -3,8 +3,9 @@ int main(void)
 {
     try
     {
-        Bureaucrat foo("foot", 150);
+        Bureaucrat foo("foot", 10);
         foo.incGrade();
+		std::cout << foo << std::endl;
         /* do some stuff with bureaucrats */
     }
     catch (std::exception & e)
