@@ -1,7 +1,6 @@
 
 
 #include "Bureaucrat.hpp"
-#include <string>
 
 Bureaucrat::Bureaucrat(){}
 
@@ -53,8 +52,8 @@ int	Bureaucrat::getGrade() const {
 	return (_grade);
 }
 
-std::ostream&	operator<<(std::ostream &os, Bureaucrat &bureaucrat){
-	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+std::ostream&	operator<<(std::ostream &os, Bureaucrat &rhs){
+	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return (os);
 }
 
@@ -63,4 +62,12 @@ const char* Bureaucrat::GradeTooHighException::what() const throw() {
 }
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
     return "Grade too low";
+}
+
+void    Bureaucrat::signForm(Form& form) const{
+    if (form.getIsSigned())
+        std::cout << this->getName() << " singed " << form.getName() << std::endl;
+    else {
+        std::cout << this->getName() << " couldn't sing "  << form.getName() << " because " << Form::GradeTooLowException() << std::endl;
+    }
 }

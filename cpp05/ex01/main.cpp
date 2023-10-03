@@ -5,7 +5,9 @@
 int main(void)
 {
 	Bureaucrat foo("foo", 1);
-	Form()
+	Form boo("boo", 10);
+    boo.beSigned(foo);
+    foo.signForm(boo);
 
     return (0);
 }
