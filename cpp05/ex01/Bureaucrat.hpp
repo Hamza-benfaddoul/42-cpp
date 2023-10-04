@@ -5,7 +5,7 @@
 # include <ostream>
 # include <string>
 # include <exception>
-class Form;
+class   Form;
 
 class Bureaucrat
 {

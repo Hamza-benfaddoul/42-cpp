@@ -1,6 +1,7 @@
 
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(){}
 
@@ -68,6 +69,7 @@ void    Bureaucrat::signForm(Form& form) const{
     if (form.getIsSigned())
         std::cout << this->getName() << " singed " << form.getName() << std::endl;
     else {
-        std::cout << this->getName() << " couldn't sing "  << form.getName() << " because " << Form::GradeTooLowException() << std::endl;
+        std::cout << this->getName() << " couldn't sing "  << form.getName() << " because ";
+        throw Form::GradeTooLowException();
     }
 }

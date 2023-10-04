@@ -4,7 +4,7 @@
 #include <string>
 
 Form::Form(std::string name, int gradeToSign )
-    : _name( name ), _gradeToSign( gradeToSign ), _gradeToExecute( 0 )
+    : _name( name ), _isSigned(false), _gradeToSign( gradeToSign ), _gradeToExecute( 0 )
 {
     if ( gradeToSign < 1 )
         throw Form::GradeTooHighException();
