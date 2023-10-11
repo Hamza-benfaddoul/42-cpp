@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 10:31:45 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/10 10:34:53 by hbenfadd         ###   ########.fr       */
+/*   Created: 2023/10/09 16:41:24 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/10/11 10:36:35 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include <string>
 #include <fstream>
 # include "AForm.hpp"
 class Bureaucrat;
 
-
-
-class PresidentialPardonForm : public AForm {
+class RobotomyRequestForm : public AForm {
     private:
         std::string _target;
     public:
-        PresidentialPardonForm();
-        PresidentialPardonForm(std::string target);
-        PresidentialPardonForm(const PresidentialPardonForm &);
-        PresidentialPardonForm &operator=(const PresidentialPardonForm &);
-        ~PresidentialPardonForm();
+        RobotomyRequestForm();
+        RobotomyRequestForm(std::string target);
+        RobotomyRequestForm(const RobotomyRequestForm &);
+        RobotomyRequestForm &operator=(const RobotomyRequestForm &);
+        ~RobotomyRequestForm();
 
         std::string getTarget() const;
 
         void execute(Bureaucrat const & executor) const;
 };
 
-#endif /* PRESIDENTIALPARDONFORM_HPP */
+#endif /* ROBOTOMYREQUESTFORM_HPP */

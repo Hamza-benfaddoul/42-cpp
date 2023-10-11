@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/10 10:25:36 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/10/10 10:25:37 by hbenfadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
 # include <iostream>
 # include <exception>
-# include "Bureaucrat.hpp"
 # include <ostream>
 # include <string>
-
+class Bureaucrat;
 
 class AForm {
     private:
@@ -19,16 +30,18 @@ class AForm {
     public:
         AForm();
         AForm(std::string name, int gradeToSing);
-        AForm(const Form &);
-        AForm &operator=(const Form &);
+        AForm(std::string name, int gradeToSing, int gradeToExecute);
+        AForm(const AForm &);
+        AForm &operator=(const AForm &);
         ~AForm();
 
         std::string getName() const ;
         int         getIsSigned() const ;
-        int         getGradeToSign() const ;
-        int         getGradeToExecute() const ;
+        int         getGradeToSign() const;
+        int         getGradeToExecute() const;
 
-        void    beSigned(Bureaucrat& Bureaucrat);
+        void            beSigned(Bureaucrat& Bureaucrat);
+        virtual void    execute(Bureaucrat const & executor) const = 0;
 
     /* ---------------- Exception Classes ---------------- */
         class GradeTooHighException : public std::exception {
@@ -36,6 +49,10 @@ class AForm {
                 virtual const char* what() const throw();
         };
         class GradeTooLowException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
+        class FormNotSignedException : public std::exception {
             public:
                 virtual const char* what() const throw();
         };

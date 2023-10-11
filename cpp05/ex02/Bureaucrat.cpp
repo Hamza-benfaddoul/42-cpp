@@ -1,7 +1,17 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/10 09:51:27 by hbenfadd          #+#    #+#             */
+/*   Updated: 2023/10/10 09:54:27 by hbenfadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(){}
 
@@ -65,11 +75,20 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
     return "Grade too low";
 }
 
-void    Bureaucrat::signForm(Form& form) const{
+void    Bureaucrat::signForm(AForm& form) const{
     if (form.getIsSigned())
         std::cout << this->getName() << " singed " << form.getName() << std::endl;
     else {
         std::cout << this->getName() << " couldn't sing "  << form.getName() << " because ";
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
+}
+
+void Bureaucrat::executeForm(AForm const & from) const {
+    if (from.getIsSigned())
+        std::cout << this->getName() << " executed " << from.getName() << std::endl;
+    else {
+        std::cout << this->getName() << " couldn't execute " << from.getName() << " because ";
+        throw AForm::GradeTooLowException();
+    }   
 }
