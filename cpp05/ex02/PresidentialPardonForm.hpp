@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:31:45 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/10 10:34:53 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:51:12 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class PresidentialPardonForm : public AForm {
 
         std::string getTarget() const;
 
-        void execute(Bureaucrat const & executor) const;
+        virtual void execute(Bureaucrat const & executor) const;
 };
 
 #endif /* PRESIDENTIALPARDONFORM_HPP */

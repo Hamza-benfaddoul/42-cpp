@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:41:24 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/11 10:36:35 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:16:57 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RobotomyRequestForm : public AForm {
 
         std::string getTarget() const;
 
-        void execute(Bureaucrat const & executor) const;
+        virtual void execute(Bureaucrat const & executor) const;
 };
 
 #endif /* ROBOTOMYREQUESTFORM_HPP */

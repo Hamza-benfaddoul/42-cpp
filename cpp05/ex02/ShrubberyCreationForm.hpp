@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:50:46 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/10 09:50:17 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:10:15 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 class ShrubberyCreationForm : public AForm {
 public:
+    ShrubberyCreationForm();
     ShrubberyCreationForm(const std::string& target);
     ShrubberyCreationForm(const ShrubberyCreationForm& other);
     virtual ~ShrubberyCreationForm();
@@ -27,7 +28,7 @@ public:
     virtual void execute(const Bureaucrat& executor) const;
 
 private:
-    std::string target_;
+    std::string _target;
 };
 
 #endif // SHRUBBERYCREATIONFORM_HPP

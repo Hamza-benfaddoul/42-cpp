@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:25:36 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/10 10:25:37 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:09:01 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class AForm {
         AForm(std::string name, int gradeToSing, int gradeToExecute);
         AForm(const AForm &);
         AForm &operator=(const AForm &);
-        ~AForm();
+        virtual ~AForm();
 
         std::string getName() const ;
         int         getIsSigned() const ;

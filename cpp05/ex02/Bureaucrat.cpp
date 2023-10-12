@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 09:51:27 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/10 09:54:27 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:11:12 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,14 @@ void    Bureaucrat::signForm(AForm& form) const{
     }
 }
 
-void Bureaucrat::executeForm(AForm const & from) const {
-    if (from.getIsSigned())
-        std::cout << this->getName() << " executed " << from.getName() << std::endl;
+void Bureaucrat::executeForm(AForm const & form) const {
+    if (form.getIsSigned() && form.getGradeToExecute() >= this->getGrade())
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+    }
     else {
-        std::cout << this->getName() << " couldn't execute " << from.getName() << " because ";
+        std::cout << this->getName() << " couldn't execute " << form.getName() << " because ";
         throw AForm::GradeTooLowException();
     }   
 }
