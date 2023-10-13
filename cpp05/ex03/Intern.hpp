@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:14:43 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/12 16:30:39 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/13 07:22:23 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@
         Intern(Intern const & src);
         ~Intern();
         Intern & operator=(Intern const & rhs);
+
         AForm * makeForm(std::string form, std::string target);
+
+    /* ---------------- Exception Classes ---------------- */
         class FormNotFound : public std::exception
         {
             public:

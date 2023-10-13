@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:14:40 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/12 15:52:03 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/13 07:34:26 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,17 @@ Intern & Intern::operator=(Intern const & rhs)
 
 AForm * Intern::makeForm(std::string form, std::string target)
 {
+    AForm *formPtr;
     if (form == "presidential pardon")
-        return (new PresidentialPardonForm(target));
+        formPtr = new PresidentialPardonForm(target);
     else if (form == "robotomy request")
-        return (new RobotomyRequestForm(target));
+        formPtr = new RobotomyRequestForm(target);
     else if (form == "shrubbery creation")
-        return (new ShrubberyCreationForm(target));
+        formPtr = new ShrubberyCreationForm(target);
     else
         throw FormNotFound();
+    std::cout << "Intern creates " << form << std::endl;
+    return (formPtr);
 }
 
 const char* Intern::FormNotFound::what() const throw()
