@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:32:54 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/11 11:04:55 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:40:41 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : AForm(other) {}
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
     if (this != &other)
+    {
+        AForm::operator=(other);
         this->_target = other._target;
+    }
     return (*this);
 }
 PresidentialPardonForm::~PresidentialPardonForm() {}

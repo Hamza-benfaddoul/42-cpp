@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 09:51:27 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/12 14:11:12 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:31:33 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,22 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 void    Bureaucrat::signForm(AForm& form) const{
     if (form.getIsSigned())
         std::cout << this->getName() << " singed " << form.getName() << std::endl;
-    else {
+    else if (this->getGrade() < form.getGradeToSign()) {
         std::cout << this->getName() << " couldn't sing "  << form.getName() << " because ";
         throw AForm::GradeTooLowException();
     }
+    else if ( this->getGrade() > form.getGradeToSign())
+    {
+        std::cout << this->getName() << " couldn't sing "  << form.getName() << " because ";
+        throw AForm::GradeTooHighException();
+
+    }
+    else {
+        std::cout << this->getName() << " couldn't sing "  << form.getName() << " because ";
+        std::cout << " not signed yet" << std::endl;
+    }
 }
+
 
 void Bureaucrat::executeForm(AForm const & form) const {
     if (form.getIsSigned() && form.getGradeToExecute() >= this->getGrade())
