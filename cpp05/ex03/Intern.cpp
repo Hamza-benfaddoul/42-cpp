@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:14:40 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/13 07:34:26 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:38:54 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,19 @@ Intern & Intern::operator=(Intern const & rhs)
 
 AForm * Intern::makeForm(std::string form, std::string target)
 {
-    AForm *formPtr;
-    if (form == "presidential pardon")
-        formPtr = new PresidentialPardonForm(target);
-    else if (form == "robotomy request")
-        formPtr = new RobotomyRequestForm(target);
-    else if (form == "shrubbery creation")
-        formPtr = new ShrubberyCreationForm(target);
-    else
-        throw FormNotFound();
-    std::cout << "Intern creates " << form << std::endl;
-    return (formPtr);
+    std::string forms[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
+    AForm *formList[3] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
+    
+
+    for (int i = 0; i < 3; i++)
+    {
+        if (form == forms[i])
+        {
+            std::cout << "Intern creates " << form << std::endl;
+            return (formList[i]);
+        }
+    }
+    throw FormNotFound();
 }
 
 const char* Intern::FormNotFound::what() const throw()

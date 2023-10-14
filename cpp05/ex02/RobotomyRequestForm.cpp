@@ -38,7 +38,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     if (this->getIsSigned() == false)
         throw AForm::FormNotSignedException();
     else if ( executor.getGrade() > this->getGradeToExecute())
-        throw AForm::FormNotSignedException();
+        throw AForm::GradeTooLowException();
     else {
         static bool check = rand() % 2;
         std::cout << "Brrrrrrrrr" << std::endl;
