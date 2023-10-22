@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:37:18 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/19 08:57:49 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/22 14:53:33 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main()
 				"\n\taddress next: " << ptr2.next <<
 	std::endl << std::endl;
 
-	Data *reserialized_struct = Serializer::unserialize(Serializer::serialize(&ptr));
+	Data *reserialized_struct = Serializer::deserialize(Serializer::serialize(&ptr));
 
 	std::cout << "Here is the reserialized structs:" <<
 				"\n\taddress: " << reserialized_struct <<

@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:30:50 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/19 08:56:55 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/22 14:52:14 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Serializer
 		Serializer &operator=(const Serializer &src);
 
 		static uintptr_t serialize(Data *ptr);
-		static Data *unserialize(uintptr_t raw);
+		static Data *deserialize(uintptr_t raw);
 };
 
 #endif /* SERIALIZER_HPP */

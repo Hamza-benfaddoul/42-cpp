@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:39:42 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/16 14:40:47 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/22 14:52:55 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Base::~Base() {}
 
 Base * generate(void)
 {
+    std::srand(time(NULL));
     int i = rand() % 3;
     if (i == 0)
         return (new A);

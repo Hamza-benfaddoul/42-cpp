@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:41:15 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/16 10:42:24 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/22 14:55:29 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ uintptr_t	Serializer::serialize(Data *ptr)
 	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-Data	*Serializer::unserialize(uintptr_t raw)
+Data	*Serializer::deserialize(uintptr_t raw)
 {
 	return (reinterpret_cast<Data *>(raw));
 }
