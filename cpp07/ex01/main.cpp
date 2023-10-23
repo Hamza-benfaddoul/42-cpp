@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:52:03 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/22 15:15:08 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:25:36 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 int main()
 {
     int		tab[] = { 0, 1, 2, 3, 4 };
-    iter(tab, 5, show);
+    iter<const int>(tab, 5, show);
     return 0;
 }
