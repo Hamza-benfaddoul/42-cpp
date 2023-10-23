@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:56:13 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/23 13:22:42 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:30:05 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define ITER_HPP
 # include <stddef.h>
 # include <iostream>
+
+template <typename T>
+void    iter(T *array, size_t len, void (*f)(T const &))
+{
+    for (size_t i = 0; i < len; i++)
+        f(array[i]);
+}
 
 template <typename T>
 void    iter(T *array, size_t len, void (*f)(T &))
