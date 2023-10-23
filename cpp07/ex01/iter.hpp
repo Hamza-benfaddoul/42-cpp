@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:56:13 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/10/23 14:30:05 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:55:45y hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,15 @@
 # include <stddef.h>
 # include <iostream>
 
-template <typename T>
-void    iter(T *array, size_t len, void (*f)(T const &))
+template <typename T, typename V>
+void    iter(T *array, size_t len, void (*f)(V &))
 {
     for (size_t i = 0; i < len; i++)
         f(array[i]);
 }
 
 template <typename T>
-void    iter(T *array, size_t len, void (*f)(T &))
-{
-    for (size_t i = 0; i < len; i++)
-        f(array[i]);
-}
-
-template <typename T>
-void    show(T const &x)
+void    show(T &x)
 {
     std::cout << x << std::endl;
 }
