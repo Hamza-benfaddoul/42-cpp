@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:06:21 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/11/21 08:59:06 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:30:51 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ int main(void)
     v.push_back(2);
     v.push_back(3);
     v.push_back(4);
+
     l.push_back(1);
     l.push_back(2);
     l.push_back(3);
     l.push_back(4);
+
     d.push_back(1);
     d.push_back(2);
     d.push_back(3);

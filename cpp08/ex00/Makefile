@@ -17,11 +17,12 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS		= main.cpp
+HEADRS		= easyfind.hpp
 OBJCS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJCS)
+$(NAME): $(OBJCS) $(HEADRS)
 	$(CXX) $(CXXFLAGS)  $(OBJCS) -o $@
 	
 clean:
@@ -29,6 +30,6 @@ clean:
 	
 fclean: clean
 	rm -f $(NAME)
-re: flcean all
+re: fclean all
 
 .PHONY: all clean flcean re
