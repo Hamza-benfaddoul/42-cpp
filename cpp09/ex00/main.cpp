@@ -6,14 +6,15 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:22:24 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/12/03 14:00:28 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/12/14 18:15:30 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int	main(int ac, char **av, char **env)
+int	main(int ac, char **av)
 {
+	(void)av;
 	if (ac != 2)
 	{
 		std::cout << "Usage: ./bitcoin [inputfile]" << std::endl;

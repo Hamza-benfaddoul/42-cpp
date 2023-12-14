@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:11:37 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/12/03 13:56:04 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/12/14 16:06:11 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
 	std::map<std::string, double> _secondData;
 	double _rate;
 public:
+	BitcoinExchange();
 	BitcoinExchange(std::string const &file);
 	BitcoinExchange(double rate);
 	BitcoinExchange(BitcoinExchange const &other);
