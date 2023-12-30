@@ -14,7 +14,7 @@
 
 BitcoinExchange::BitcoinExchange(std::string const& file)
 {
-	std::ifstream ifs(file);
+	std::ifstream ifs(file.c_str());
 	std::string line;
 	std::string date;
 	std::string rate;
@@ -26,7 +26,7 @@ BitcoinExchange::BitcoinExchange(std::string const& file)
 			std::istringstream iss(line);
 			std::getline(iss, date, ',');
 			std::getline(iss, rate);
-			this->_dataBase[date] = std::stod(rate.c_str());
+			this->_dataBase[date] = std::strtod(rate.c_str(),NULL);
 		}
 		ifs.close();
 	}
@@ -110,7 +110,7 @@ void	checkValue(std::string const &value)
 	if (value[0] == '-')
 		throw std::runtime_error("Error: not a positive number.");
 	val = std::strtod(value.c_str(), &end);
-	if (*end != '\0')
+	if (*end != '\0' || value.empty() || value[0] == ' ' || value[0] == '.')
 		throw std::runtime_error("Error: bad input" + value);
  	if(val < 0 || val > 99999)
 		throw std::runtime_error("Error: to large a number");
@@ -118,7 +118,7 @@ void	checkValue(std::string const &value)
 
 void BitcoinExchange::read_file(std::string const &file)
 {
-	std::ifstream ifs(file);
+	std::ifstream ifs(file.c_str());
 	std::string line;
 	std::string date;
 	std::string value;
