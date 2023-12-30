@@ -6,14 +6,14 @@
 #    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 12:33:26 by hbenfadd          #+#    #+#              #
-#    Updated: 2023/12/14 15:36:48 by hbenfadd         ###   ########.fr        #
+#    Updated: 2023/12/30 18:22:21 by hbenfadd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= bitcoin
+NAME	= bit
 
 CXX		= c++
-CXXFLAGS= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS= -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS	= main.cpp BitcoinExchange.cpp
 OBJS	= $(SRCS:.cpp=.o)
