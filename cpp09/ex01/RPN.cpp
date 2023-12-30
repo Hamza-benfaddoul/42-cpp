@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 14:47:42 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/12/23 14:56:25 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/12/30 18:29:03 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void 	RPN::calculate(std::string str)
 
 	while (iss >> tmp)
 	{
-		std::cout << "tmp = " << tmp << std::endl;
 		if (tmp.length() == 1 && !isdigit(tmp[0]))
 		{
 			if (_stack.size() < 2)
