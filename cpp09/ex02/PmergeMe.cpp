@@ -14,20 +14,25 @@
 
 template <typename Container>
 PmergeMe<Container>::PmergeMe(int ac, char **argv){
+    int nb;
 
 	for(int i = 1; i < ac; i++)
     {
         std::string av(argv[i]);
         if (av.find("-") != std::string::npos)
         {
-            throw std::runtime_error("Invalid argument detected!");
+            throw std::runtime_error("Invalid argument detected! (negative number)");
         }
         for (int j = 0; j < (int)av.length();)
         {
             if (!std::isdigit(av[j++]))
-                throw std::runtime_error("Invalid argument detected!");
+                throw std::runtime_error("Invalid argument detected! (not a number)");
         }
-		_data.push_back(std::strtod(av.c_str(), NULL));
+        nb = std::strtod(av.c_str(), NULL);
+        if (nb < 0 )
+            throw std::runtime_error("Invalid argument detected! (max int!)");
+        else
+            _data.push_back(nb);
     } 
 }
 
