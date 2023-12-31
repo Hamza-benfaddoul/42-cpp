@@ -6,7 +6,7 @@
 /*   By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:11:37 by hbenfadd          #+#    #+#             */
-/*   Updated: 2023/12/30 17:45:51 by hbenfadd         ###   ########.fr       */
+/*   Updated: 2023/12/31 14:35:58 by hbenfadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,4 @@ public:
 	double convert(std::string const &date, double amount);
 	
 	void read_file(std::string const &file);
-	void print_result() const;
 };

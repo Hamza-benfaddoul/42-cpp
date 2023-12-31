@@ -62,8 +62,11 @@ double BitcoinExchange::convert(std::string const &date, double amount)
 	if (it == this->_dataBase.end())
 	{
 		_dataBase.insert(std::pair<std::string, double>(date, 0));
-	it = this->_dataBase.find(date);
-		--it;
+		it = this->_dataBase.find(date);
+		if (it == this->_dataBase.begin())
+			++it;
+		else
+			--it;
 		_dataBase.erase(date);
 		return (amount * it->second);
 	}
@@ -93,9 +96,9 @@ void	checkDate(std::string &date)
 		throw std::runtime_error("Error: bad input => " + iss.str());
 	if(std::strtod(year.c_str(), NULL) <= 2008 || std::strtod(year.c_str(), NULL) > 9999)
 		throw std::runtime_error("Error: bad input => " + iss.str());
-	if(std::strtod(month.c_str(), NULL) < 0 || std::strtod(month.c_str(), NULL) > 12)
+	if(std::strtod(month.c_str(), NULL) <= 0 || std::strtod(month.c_str(), NULL) > 12)
 		throw std::runtime_error("Error: bad input => " + iss.str());
-	if(std::strtod(day.c_str(), NULL) < 0 || std::strtod(day.c_str(), NULL) > 31)
+	if(std::strtod(day.c_str(), NULL) <= 0 || std::strtod(day.c_str(), NULL) > 31)
 		throw std::runtime_error("Error: bad input => " +  iss.str());
 	if(std::strtod(month.c_str(), NULL) == 4 || std::strtod(month.c_str(), NULL) == 6
 		|| std::strtod(month.c_str(), NULL) == 9 || std::strtod(month.c_str(), NULL) == 11)
@@ -107,7 +110,7 @@ void	checkDate(std::string &date)
 		throw std::runtime_error("Error: bad input => " + iss.str());
 }
 
-void	checkValue(std::string const &value)
+void	checkValue(std::string const &value, std::string const &line)
 {
 	char	*end;
 	double	val;
@@ -116,8 +119,8 @@ void	checkValue(std::string const &value)
 		throw std::runtime_error("Error: not a positive number.");
 	val = std::strtod(value.c_str(), &end);
 	if (*end != '\0' || value.empty() || std::isdigit(value[0]) == false)
-		throw std::runtime_error("Error: bad input" + value);
- 	if(val < 0 || val > 10000)
+		throw std::runtime_error("Error: bad input" + line);
+ 	if(val < 0 || val > 1000)
 		throw std::runtime_error("Error: to large a number");
 }
 
@@ -146,13 +149,17 @@ void BitcoinExchange::read_file(std::string const &file)
 					throw std::runtime_error("Error: bad input => " + iss.str());
 				if (date.at(date.length() - 1) == ' ')
 					date.erase(date.end() - 1, date.end()); // remove last char (space)
+				else
+					throw std::runtime_error("Error: bad input => " + iss.str());
 				checkDate(date);
 				std::getline(iss, value);
 				if (value.empty())
 					throw std::runtime_error("Error: bad input => " + iss.str());
 				if(value.at(0) == ' ')
 					value.erase(value.begin(), value.begin() + 1); // remove first char (space)
-				checkValue(value);
+				else
+					throw std::runtime_error("Error: bad input => " + iss.str());
+				checkValue(value, iss.str());
 				std::cout << date << " => " << value << " = " << this->convert(date, std::strtod(value.c_str(), NULL)) << std::endl;
 				date.clear();
 				value.clear();
@@ -165,9 +172,5 @@ void BitcoinExchange::read_file(std::string const &file)
 		ifs.close();
 	}
 	else
-		std::cout << "Error: file not found" << std::endl;
-}
-
-void BitcoinExchange::print_result() const
-{
+		std::cout << "Error: could not open file" << std::endl;
 }

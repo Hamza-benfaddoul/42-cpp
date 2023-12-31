@@ -6,11 +6,11 @@
 #    By: hbenfadd <hbenfadd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 12:33:26 by hbenfadd          #+#    #+#              #
-#    Updated: 2023/12/30 18:22:21 by hbenfadd         ###   ########.fr        #
+#    Updated: 2023/12/31 15:10:33 by hbenfadd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= bit
+NAME	= btc
 
 CXX		= c++
 CXXFLAGS= -Wall -Wextra -Werror -std=c++98 -g
